@@ -12,3 +12,5 @@ export const INITIAL_STATE_ENGINE = {
   '11': false,
   '12': false,
 };
+
+export const INITIAL_TIMER = 120;

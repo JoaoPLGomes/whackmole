@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 
 
 const useTimer = (timer: number) => {
-  const [isRunning, setIsRunning] = React.useState<boolean>(true);
-  const [counter, setCounter] = React.useState<number>(timer );
+  const [isRunning, setIsRunning] = React.useState<boolean>(false);
+  const [counter, setCounter] = React.useState<number>(timer);
 
   useEffect(() => {
     counter > 0 && isRunning && setTimeout(() => setCounter(counter - 1), 1000);
@@ -19,6 +19,7 @@ const useTimer = (timer: number) => {
     counter,
     isRunning,
     setIsRunning,
+    resetTimer: () => setCounter(timer),
   }
   )
 }
