@@ -1,17 +1,10 @@
-import Head from 'next/head';
+import Engine from '@/components/Engine/Engine';
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Whack a mole!</title>
-        <meta name="description" content="Classic game of whack a mole" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <h1 className="text-red-500">Whack a mole!</h1>
-      </main>
-    </>
+    <div className="w-full h-full flex justify-center items-center bg-contain	bg-no-repeat">
+      <img src="/WAM_bg.jpg" className="absolute h-full" />
+      <Engine />
+    </div>
   );
 }
