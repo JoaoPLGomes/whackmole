@@ -38,7 +38,12 @@ const Engine = (): JSX.Element => {
       <TopMenu counter={counter} isRunning={isRunning} setIsRunning={setIsRunning} playerScore={playerScore} />
       <div className="h-2/3 w-2/3 grid grid-cols-4 grid-rows-3 z-0">
         {Object.keys(moles).map((key) => (
-          <Mole key={key} isUp={moles[key]} onHammerDown={() => onHammerDown(key)} setDown={() => setMoles({ ...moles, [key]: false })} />
+          <Mole
+            key={key}
+            isUp={moles[key]}
+            onHammerDown={() => onHammerDown(key)}
+            setDown={() => setMoles((moles) => ({ ...moles, [key]: false }))}
+          />
         ))}
       </div>
     </>
