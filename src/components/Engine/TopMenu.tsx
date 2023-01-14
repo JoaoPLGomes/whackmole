@@ -1,4 +1,5 @@
 import React from 'react';
+import MoleButton from '../shared/MoleButton';
 
 interface TopMenuProps {
   counter: number;
@@ -10,8 +11,8 @@ interface TopMenuProps {
 const TopMenu = ({ counter, isRunning, setIsRunning, playerScore }: TopMenuProps): JSX.Element => {
   return (
     <div className="w-full absolute top-0 p-4 flex justify-between">
-      <p className=" text-4xl text-white">{counter}</p>
-      {isRunning && <button onClick={() => setIsRunning(!isRunning)}>Pause</button>}
+      <p className="text-4xl text-white">{counter}</p>
+      {isRunning && <MoleButton onClick={() => setIsRunning(!isRunning)}>Pause</MoleButton>}
       <p className="text-4xl text-white">Score : {playerScore}</p>
     </div>
   );
