@@ -1,26 +1,55 @@
 import { INITIAL_TIMER } from '@/contants/Engine';
 import React from 'react';
 import MoleButton from '../shared/MoleButton';
+import { supabase } from '@/lib/supabaseClient';
+import { useRouter } from 'next/router';
+import MoleModal from '../shared/MoleModal';
 
 interface MenuModalProps {
   counter: number;
   isRunning: boolean;
   setIsRunning: (isRunning: boolean) => void;
   resetGame: () => void;
+  score: number;
 }
 
-const MenuModal = ({ counter, isRunning, setIsRunning, resetGame }: MenuModalProps): JSX.Element => {
+const MenuModal = ({ counter, isRunning, setIsRunning, resetGame, score }: MenuModalProps): JSX.Element => {
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const name = (form[0] as HTMLInputElement).value;
+    const { error } = await supabase.from('Leaderboard').insert([{ name, score }]);
+    if (error) {
+      console.log(error);
+    }
+    router.push('/leaderboard');
+  };
+
   return (
-    <div className="absolute bg-stone-800 text-white w-fit h-fit p-8 z-10 rounded-xl text-center flex flex-col gap-4">
+    <MoleModal>
       <h1 className="text-4xl">Whack a Mole</h1>
-      <MoleButton onClick={() => setIsRunning(!isRunning)}>{counter !== INITIAL_TIMER ? 'Continue' : 'Start'}</MoleButton>
-      {counter !== INITIAL_TIMER && (
-        <MoleButton onClick={resetGame} className="bg-stone-600 p-2 rounded-xl">
-          Start new game
-        </MoleButton>
+      {counter === 0 ? (
+        <>
+          <p className="text-2xl">Your score is {score}</p>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input type="text" placeholder="Enter your name" className="bg-stone-600 p-2 rounded-xl" />
+            <input type="submit" value="Submit" className="bg-stone-600 p-2 rounded-xl cursor-pointer" />
+          </form>
+        </>
+      ) : (
+        <>
+          <MoleButton onClick={() => setIsRunning(!isRunning)}>{counter !== INITIAL_TIMER ? 'Continue' : 'Start'}</MoleButton>
+          {counter !== INITIAL_TIMER && (
+            <MoleButton onClick={resetGame} className="bg-stone-600 p-2 rounded-xl">
+              Start new game
+            </MoleButton>
+          )}
+          <MoleButton onClick={() => router.push('/leaderboard')}>Check Leaderboards</MoleButton>
+        </>
       )}
-      <MoleButton onClick={() => null}>Check Leaderboards</MoleButton>
-    </div>
+    </MoleModal>
   );
 };
 

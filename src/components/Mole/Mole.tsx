@@ -11,7 +11,7 @@ const Mole = ({ isUp = false, onHammerDown, setDown }: MoleProps): JSX.Element =
     if (isUp) {
       const timeout = setTimeout(() => {
         setDown();
-      }, 1000 + Math.random() * 1000);
+      }, 500 + Math.random() * 1000);
       return () => clearTimeout(timeout);
     }
   }, [isUp]);
