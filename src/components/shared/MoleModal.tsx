@@ -5,7 +5,11 @@ interface MoleModalProps {
 }
 
 const MoleModal = ({ children }: MoleModalProps) => {
-  return <div className="absolute bg-stone-800 text-white w-fit h-fit p-8 z-10 rounded-xl text-center flex flex-col gap-4">{children}</div>;
+  return (
+    <div className="absolute bg-stone-800 text-white w-fit h-fit p-8 z-10 rounded-xl text-center flex flex-col gap-4 cursor-default">
+      {children}
+    </div>
+  );
 };
 
 export default MoleModal;
