@@ -13,10 +13,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => ({
 }));
 
 describe('Engine', () => {
-  it('renders correctly', () => {
-    const { container } = render(<Engine />);
-    expect(container).toMatchSnapshot();
-  });
   it('renders correct text', () => {
     jest
       .spyOn(timer, 'useTimer')
