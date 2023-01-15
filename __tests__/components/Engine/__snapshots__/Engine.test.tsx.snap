@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Engine renders correctly 1`] = `
+<div>
+  <div
+    class="absolute bg-stone-800 text-white w-fit h-fit p-8 z-10 rounded-xl text-center flex flex-col gap-4"
+  >
+    <h1
+      class="text-4xl"
+    >
+      Whack a Mole
+    </h1>
+    <button
+      aria-label="Continue/Start"
+      class="bg-stone-600 p-2 rounded-xl"
+    >
+      Start
+    </button>
+    <button
+      class="bg-stone-600 p-2 rounded-xl"
+    >
+      Check Leaderboards
+    </button>
+  </div>
+  <div
+    class="w-full absolute top-0 p-4 flex justify-between"
+  >
+    <p
+      class="text-4xl text-white"
+    >
+      Time left: 
+      120
+    </p>
+    <p
+      class="text-4xl text-white"
+    >
+      Score : 
+      0
+    </p>
+  </div>
+  <div
+    class="h-2/3 w-2/3 grid grid-cols-4 grid-rows-3 z-0"
+  >
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center"
+    >
+      <img
+        src="/WAM_Hole.png"
+      />
+    </div>
+  </div>
+</div>
+`;

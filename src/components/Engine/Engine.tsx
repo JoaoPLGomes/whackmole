@@ -1,5 +1,5 @@
-import { INITIAL_STATE_ENGINE, INITIAL_TIMER } from '@/contants/Engine';
-import useTimer from '@/hooks/useTimer';
+import { INITIAL_STATE_ENGINE, INITIAL_TIMER } from '@/constants/Engine';
+import { useTimer } from '@/hooks/useTimer';
 import React, { useEffect } from 'react';
 import MenuModal from '../MenuModal/MenuModal';
 import Mole from '../Mole/Mole';
@@ -34,6 +34,7 @@ const Engine = (): JSX.Element => {
 
   return (
     <>
+      {isRunning ? 'true' : 'false'}
       {!isRunning && (
         <MenuModal counter={counter} isRunning={isRunning} setIsRunning={setIsRunning} resetGame={handleResetGame} score={playerScore} />
       )}

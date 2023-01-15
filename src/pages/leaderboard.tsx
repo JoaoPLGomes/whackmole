@@ -17,15 +17,23 @@ const LeaderboardPage = ({ leaderboard }: any) => {
           </tr>
         </thead>
         <tbody>
-          {leaderboard
-            .sort((a: any, b: any) => b.score - a.score)
-            .slice(0, 10)
-            .map((entry: any) => (
-              <tr key={entry.id}>
-                <td className="text-2xl">{entry.name}</td>
-                <td className="text-2xl">{entry.score}</td>
-              </tr>
-            ))}
+          {leaderboard.length > 0 ? (
+            leaderboard
+              .sort((a: any, b: any) => b.score - a.score)
+              .slice(0, 10)
+              .map((entry: any) => (
+                <tr key={entry.id}>
+                  <td className="text-2xl">{entry.name}</td>
+                  <td className="text-2xl" data-testid="score">
+                    {entry.score}
+                  </td>
+                </tr>
+              ))
+          ) : (
+            <tr>
+              <td className="text-2xl">No scores yet</td>
+            </tr>
+          )}
         </tbody>
       </table>
       <MoleButton onClick={() => router.push('/')}>Back to game</MoleButton>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 
 
-const useTimer = (timer: number) => {
+export const useTimer = (timer: number) => {
   const [isRunning, setIsRunning] = React.useState<boolean>(false);
   const [counter, setCounter] = React.useState<number>(timer);
 
@@ -23,5 +23,3 @@ const useTimer = (timer: number) => {
   }
   )
 }
-
-export default useTimer;
